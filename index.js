@@ -116,7 +116,7 @@ bot.on("messageCreate", async (msg) => { // When a message is created
                 let dice = roll.split(/d/i); //1d6 = roll 1, 6 sided dice
                 totalDiceRolls += dice[0];
                 if (totalDiceRolls > maxDiceRolls) {
-                    log('waring! uwu exceeded the amouth of allowed dice rolls! uwu: ' + totalDiceRolls)
+                    log('Warning! Total dice to roll, ' + totalDiceRolls +', exceed max of, ' + maxDiceRolls)
                     return;
                 }
                 else {
@@ -135,16 +135,14 @@ bot.on("messageCreate", async (msg) => { // When a message is created
                 rand = getRandomInt(1, 10);
 
                 log ('random number: ' + rand)
-                if (rand <= 5) { //0 50%
-                    reply = 'th- thats \'s too large';
-                    emote = '<:tooLewd:652847267002318867>';
+                if (rand <= 5) {        //0 - 5 50%
+                    reply = 'Too many dice!';
                 }
-                else if (rand <= 8) { //5 - 8 is 30%
-                    reply = 't- thats the wrong hole uwu';
+                else if (rand <= 8) {   //5 - 8 30%
+                    reply = 'Too many dice, friend';
                 }
-                else {  //only if rand > 8 so 20%
-                    reply = 'th- that big would never fit';
-                    emote = '<:cirnoScared:652847525459394590>';
+                else {                  //8 - 10 20%
+                    reply = 'You trying to run me out of business with this amount of dice rolls?';
                 }
 
                 bot.createMessage(msg.channel.id, reply + ' *(rolled dice exceed ' + maxDiceRolls + ')*' );
