@@ -139,7 +139,7 @@ bot.on("messageCreate", async (msg) => { // When a message is created
                     reply = 'Too many dice!';
                 }
                 else if (rand <= 8) {   //5 - 8 30%
-                    reply = 'Too many dice, friend';
+                    reply = 'Too many dice, friend.';
                 }
                 else {                  //8 - 10 20%
                     reply = 'You trying to run me out of business with this amount of dice rolls?';
